@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
-from mpl_toolkits.mplot3d import Axes3D
 
 preci = 2000
 length = preci +1
@@ -12,7 +11,8 @@ x = np.vstack((x,x))
 x = np.repeat(x,[1,preci],axis=0)
 #a normal gradient is created
 
-line = np.zeros(x.shape)
+linex = []
+liney = []
 #create a blank plot
 
 r = np.transpose(x)
