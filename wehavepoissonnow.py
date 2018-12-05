@@ -9,7 +9,7 @@ from multiprocessing.dummy import Pool as ThreadPool
 c =0.05
 m = 0.75
 #mu = 2
-maximunAttack = 5
+maximunAttack = 3
 #Initiation
 
 #well...
@@ -18,7 +18,7 @@ def newa (m):
     n = 1 - pow(math.e,-m)
     return n
 
-print("now attack the undenfenced", newa )
+
 
 def theConstant(m):
     tc = 0
@@ -27,9 +27,9 @@ def theConstant(m):
         p = p * pow(m,i)
         q = p/math.factorial(i)
         tc = tc + q
-        return tc
+    return tc
 
-print("now attack the defenced", theConstant)
+
 #Now start the real attack.
 
 preci = 2000
@@ -39,11 +39,13 @@ y = np.arange(preci+1)
 y = y / 2000
 
 def w (mu):
+    print("now attack the undenfenced", newa(mu) )
     w = (1 - y) * (1 - y)
     w = w * newa(mu)
     w = 1 - w
     w = w * (1 - (c * y))
     w = w * theConstant(mu)
+    print("now attack the defenced", theConstant(mu))
     return w
 #My wild calculation
 
