@@ -1,3 +1,7 @@
+# Poisson distribution added
+
+Now the model changed. We
+
 # Replication of Frank(1998)
 
 This file describes the function file refrankfig1.py
