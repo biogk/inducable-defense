@@ -7,9 +7,9 @@ from multiprocessing.dummy import Pool as ThreadPool
 #Again
 
 c =0.05
-m = 0.75
+m = 7.5
 #mu = 2
-maximunAttack = 3
+maximunAttack = 7
 #Initiation
 
 #well...
@@ -17,8 +17,6 @@ maximunAttack = 3
 def newa (m):
     n = 1 - pow(math.e,-m)
     return n
-
-
 
 def theConstant(m):
     tc = 0
@@ -28,7 +26,6 @@ def theConstant(m):
         q = p/math.factorial(i)
         tc = tc + q
     return tc
-
 
 #Now start the real attack.
 
@@ -82,6 +79,5 @@ plt.title('m = 5')
 
 #plt.xlim(0, 1)
 #lt.ylim(0, 1)
-plt.subplots_adjust(top=0.92, bottom=0.08, left=0.10, right=0.95, hspace=0.5,
-                    wspace=0.35)
+plt.subplots_adjust(top=0.92, bottom=0.08, left=0.10, right=0.95, hspace=0.5, wspace=0.35)
 plt.show()
