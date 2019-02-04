@@ -1,8 +1,17 @@
-# Poisson distribution added
+# 0.2 Poisson distribution added
 
-Now the model changed. We
+Now the model has been changed. I simulate the prey as a random event that follows poisson distribution.
 
-# Replication of Frank(1998)
+The model can be understood as several processes.
+- 'First impact' kills who have not developed the defence.
+- Wear down the defence of who have it.
+- Who then survive pays the cost.
+
+Now replacing the a value to the probability of attack at lease once in poisson distribution and add another selection to those who survived, it seems that the optimal probability of inducing a defence only depends on the distribution of attack. This is a obvious result, since everything except the probabilities are constants, while the uniform selection seems adding nothing useful.
+
+
+
+# 0.1 Replication of Frank(1998)
 
 This file describes the function file refrankfig1.py
 
