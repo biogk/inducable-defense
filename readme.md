@@ -1,9 +1,3 @@
-# 0.3 A Improved model with poisson distribution
-
-The previous poisson model is not biologically sensitive. Thus I created a model from scratch, but referring Frank(1998).
-
-The model calculates the fitness of individual with behaviour, y, in population with average behaviour, z.
-
 # 0.2 Poisson distribution added
 
 Now the model has been changed. I simulate the prey as a random event that follows poisson distribution.
