@@ -57,7 +57,7 @@ The solve function is called multiple times to make the solution for different v
 * Require two huge matrix to solve equaton.(fine)
 
 ## Future plan
-* Stop working on graphs.
-* Get into time based models!
-* Get into agent-based simulation!
-* Build a standardised model!
+* ~~Stop working on graphs.~~
+* Kin selection in virulence
+* Partial dispersal offspring
+* Build a standardised model!(unlikely)

@@ -2,7 +2,14 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 
-m = 0.75
+def prob (maxn):
+    j = 0
+    opt = 0
+    for j in range(0,maxn):
+        opt = opt + d[j]
+    return opt
+
+m = 3
 k = np.arange(0, 20, 1)
 d = []
 i = 0
@@ -13,7 +20,9 @@ for i in k:
     q = p/math.factorial(i)
     d.append(q)
 
+v = prob(2)
 print(d)
 print(k)
+print(v)
 plt.bar(k, d, width=1)
 plt.show()
