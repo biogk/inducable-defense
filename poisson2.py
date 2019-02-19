@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+from matplotlib import cm
 
 from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool
@@ -61,9 +62,11 @@ y = y / 2000
 
 def derw (ay):
     p1 = prob(max1)
-    print(p1)
+    print("p1=", p1)
     p2 = prob(max2)
-    print(p2)
+    print("p2=", p2)
+
+    print("")
 
     dw = 1 - ( c * ay )
     dw = dw * df(ay) * ay
@@ -77,24 +80,15 @@ def derw (ay):
     return dw
 #My wild calculation
 
-dd = poi(7)
-dw1 = derw(y)
+muvalues = [17]
 
-dd = poi(5)
-dw2 = derw(y)
+for muv in muvalues:
+    dd = poi(muv)
+    dws = derw(y)
+    plt.plot(y,dws)
 
-dd = poi(3)
-dw3 = derw(y)
-
-dd = poi(1)
-dw4 = derw(y)
-
-plt.plot(y,dw1)
-plt.plot(y,dw2)
-plt.plot(y,dw3)
-plt.plot(y,dw4)
 
 plt.axhline(0, color='grey', linestyle='--')
 
-plt.legend(['7', '5', '3', '1'], loc='upper left')
+plt.legend(muvalues, loc='upper left')
 plt.show()
