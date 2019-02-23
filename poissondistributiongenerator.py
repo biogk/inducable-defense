@@ -9,7 +9,7 @@ def prob (maxn):
         opt = opt + d[j]
     return opt
 
-m = 3
+m = 1
 k = np.arange(0, 20, 1)
 d = []
 i = 0

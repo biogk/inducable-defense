@@ -7,30 +7,23 @@ from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool
 #Again
 
-c = 0.1
+c = 0.2
 
 #mu = 2
 max2 = 7
-max1 = 3
+max1 = 2
+r0 = 0.9 #default might be changed later
+mu0 = 0.7
 #Initiation
 
 #well...
-def f(y):
-    ff = 1 - y
+def f(z):
+    ff = 0.1 * z + 0.9
     return ff
 
-def df(y):
-    dff = -1
+def df(z):
+    dff = 0.1
     return dff
-
-
-def mapZeros (tobemapped) :
-    for ax in range(0,length):
-        for bx in range(0,length):
-            tester = tobemapped[ax][bx]
-            if tester * tester < 0.0000001 :
-                line[ax][bx]=1
-    return
 
 def poi(m):
     k = np.arange(0, 40, 1)
@@ -60,35 +53,49 @@ length = preci +1
 y = np.arange(preci+1)
 y = y / 2000
 
-def derw (ay):
+def derw (ay, r):
     p1 = prob(max1)
     print("p1=", p1)
     p2 = prob(max2)
     print("p2=", p2)
 
     print("")
-
-    dw = 1 - ( c * ay )
-    dw = dw * df(ay) * ay
-    aa = 1 - ( 2 * c * ay )
-    dw = dw + ( aa * f(ay))
-    dw = dw * p2
-    aa = (1 - ay) * df(ay)
-    aa = aa - f(ay)
-    aa = aa * p1
-    dw = dw + aa
+    dw = (p2 - p1) * f(ay) * (1 - 2 * c * y)
+    dw = dw - c * f(ay)
+    zz = r * (p2 - p1) * y * df(y)
+    zz = zz + (p1 - c * y * y * p2) * df(y)
+    dw = dw + zz
     return dw
 #My wild calculation
 
-muvalues = [17]
+rvalues = [0.9, 0.5, 0.1]
+muvalues = [0.9,0.8,0.7,0.6,0.5]
 
-for muv in muvalues:
-    dd = poi(muv)
-    dws = derw(y)
+# examine r
+plt.subplot(121)
+plt.title('dW/dy with varying relatedness, λ=0.7')
+plt.xlabel('y')
+plt.ylabel('dW/dy')
+for r in rvalues:
+    dd = poi(mu0)
+    dws = derw(y, r)
     plt.plot(y,dws)
 
-
+plt.legend(rvalues, loc='upper left')
 plt.axhline(0, color='grey', linestyle='--')
 
+# examine the distribution parameter
+plt.subplot(122)
+plt.title('dW/dy with varying Poisson parameter, relatedness=0.9')
+plt.xlabel('y')
+plt.ylabel('dW/dy')
+for muv in muvalues:
+    dd = poi(muv)
+    dws = derw(y, r0)
+    plt.plot(y,dws)
+
 plt.legend(muvalues, loc='upper left')
+plt.axhline(0, color='grey', linestyle='--')
+
+
 plt.show()
