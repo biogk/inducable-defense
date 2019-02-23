@@ -1,3 +1,6 @@
+# 0.3.1 The last model was wrong
+Even though you do not induce a defence, you pay a cost since you grow as your self.
+
 # 0.3 A Improved model with poisson distribution
 
 The previous poisson model is not biologically sensitive. Thus I created a model from scratch, but referring Frank(1998).
