@@ -20,7 +20,7 @@ for i in k:
     q = p/math.factorial(i)
     d.append(q)
 
-v = prob(2)
+v = prob(1)
 print(d)
 print(k)
 print(v)

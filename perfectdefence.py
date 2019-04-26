@@ -7,13 +7,13 @@ from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool
 #Again
 
-c = 0.25
+c = 0.2
 
 #mu = 2
-max2 = 7
-max1 = 2
+max2 = 2
+max1 = 1
 r0 = 0.9 #default might be changed later
-mu0 = 0.9
+mu0 = 0.2
 #Initiation
 
 #well...
@@ -69,11 +69,11 @@ def derw (ay, r):
 #My wild calculation
 
 rvalues = [0.9, 0.5, 0.1]
-muvalues = [1,0.9,0.8,0.7,0.6]
+muvalues = [0.25,0.2,0.15,0.1]
 
 # examine r
 plt.subplots(figsize=(7, 6))
-plt.title('dW/dy with varying relatedness, λ=0.9, c=0.25')
+plt.title('dW/dy with varying relatedness, λ=0.2, c=0.2')
 plt.xlabel('y')
 plt.ylabel('dW/dy')
 for r in rvalues:
@@ -84,9 +84,10 @@ for r in rvalues:
 plt.legend(rvalues, loc='upper left')
 plt.axhline(0, color='grey', linestyle='--')
 
+
 # examine the distribution parameter
 plt.subplots(figsize=(7, 6))
-plt.title('dW/dy with varying Poisson parameter, relatedness=0.9, c=0.25')
+plt.title('dW/dy with varying Poisson parameter, relatedness=0.9, c=0.2')
 plt.xlabel('y')
 plt.ylabel('dW/dy')
 for muv in muvalues:
@@ -96,6 +97,5 @@ for muv in muvalues:
 
 plt.legend(muvalues, loc='upper left')
 plt.axhline(0, color='grey', linestyle='--')
-
 
 plt.show()
