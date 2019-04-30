@@ -1,4 +1,4 @@
-#0.4 Probably the last vwersion
+# 0.4 Probably the last vwersion
 The code used to generate the images is poisson2.py and perfectdefence.py.
 
 Mathematical corrections was made.
