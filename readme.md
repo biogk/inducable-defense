@@ -1,3 +1,10 @@
+#0.4 Probably the last vwersion
+The code used to generate the images is poisson2.py and perfectdefence.py.
+
+Mathematical corrections was made.
+
+See commits.
+
 # 0.3.1 The last model was wrong
 Even though you do not induce a defence, you pay a cost since you grow as your self.
 
