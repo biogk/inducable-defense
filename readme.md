@@ -1,3 +1,7 @@
+# Mathematical Model of Kin Selection and Herd Immunity
+
+This repository contains the record and necessary codes used in the project Mathematical Model of Kin Selection and Herd Immunity. All modifications to files in this repository can be viewed in commits.
+
 # 0.4 Probably the last version
 The code used to generate the images is poisson2.py and perfectdefence.py.
 
