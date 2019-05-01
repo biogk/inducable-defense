@@ -2,23 +2,28 @@
 
 This repository contains the record and necessary codes used in the project Mathematical Model of Kin Selection and Herd Immunity. All modifications to files in this repository can be viewed in commits.
 
-# 0.4 Probably the last version
+## 0.4 Probably the last version
 The code used to generate the images is poisson2.py and perfectdefence.py.
 
 Mathematical corrections was made.
 
 See commits.
 
-# 0.3.1 The last model was wrong
+## 0.3.1 The last model was wrong
+
 Even though you do not induce a defence, you pay a cost since you grow as your self.
 
-# 0.3 A Improved model with poisson distribution
+The (1-cy) cost should be applied to all individuals.
 
-The previous poisson model is not biologically sensitive. Thus I created a model from scratch, but referring Frank(1998).
+## 0.3 A Improved model with poisson distribution
+
+In the last model, when possion distribution is added, it only acts as a constant factor.
+
+The previous poisson model is not biologically sensitive. Thus I created a model from scratch, by referring Frank(1998).
 
 The model calculates the fitness of individual with behaviour, y, in population with average behaviour, z.
 
-# 0.2 Poisson distribution added
+## 0.2 Poisson distribution added
 
 Now the model has been changed. I simulate the prey as a random event that follows poisson distribution.
 
@@ -31,7 +36,7 @@ Now replacing the a value to the probability of attack at lease once in poisson 
 
 
 
-# 0.1 Replication of Frank(1998)
+## 0.1 Replication of Frank(1998)
 
 This file describes the function file refrankfig1.py
 
